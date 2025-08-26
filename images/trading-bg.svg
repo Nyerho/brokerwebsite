@@ -1,0 +1,57 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="25%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#16213e;stop-opacity:1" />
+      <stop offset="75%" style="stop-color:#0f3460;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a0a0a;stop-opacity:1" />
+    </linearGradient>
+    <pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse">
+      <path d="M 100 0 L 0 0 0 100" fill="none" stroke="#ffffff" stroke-width="0.5" opacity="0.1"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="url(#bg-gradient)"/>
+  
+  <!-- Grid overlay -->
+  <rect width="1920" height="1080" fill="url(#grid)"/>
+  
+  <!-- Trading chart lines -->
+  <g opacity="0.3">
+    <path d="M 100 800 Q 300 600 500 650 T 900 500 T 1300 400 T 1700 350" stroke="#00ff88" stroke-width="3" fill="none"/>
+    <path d="M 150 850 Q 350 700 550 750 T 950 600 T 1350 500 T 1750 450" stroke="#ff4757" stroke-width="3" fill="none"/>
+    <path d="M 200 900 Q 400 750 600 800 T 1000 650 T 1400 550 T 1800 500" stroke="#3742fa" stroke-width="3" fill="none"/>
+  </g>
+  
+  <!-- Floating geometric shapes -->
+  <g opacity="0.1">
+    <circle cx="300" cy="200" r="80" fill="#00ff88"/>
+    <rect x="800" y="150" width="120" height="120" fill="#ff4757" transform="rotate(45 860 210)"/>
+    <polygon points="1400,100 1500,180 1450,280 1350,280 1300,180" fill="#3742fa"/>
+    <circle cx="1600" cy="800" r="60" fill="#ffa502"/>
+    <rect x="200" y="600" width="100" height="100" fill="#2ed573" transform="rotate(30 250 650)"/>
+  </g>
+  
+  <!-- Candlestick patterns -->
+  <g opacity="0.2">
+    <rect x="400" y="300" width="8" height="200" fill="#00ff88"/>
+    <rect x="402" y="320" width="4" height="160" fill="#00ff88"/>
+    <rect x="450" y="250" width="8" height="300" fill="#ff4757"/>
+    <rect x="452" y="280" width="4" height="240" fill="#ff4757"/>
+    <rect x="500" y="200" width="8" height="250" fill="#00ff88"/>
+    <rect x="502" y="220" width="4" height="210" fill="#00ff88"/>
+  </g>
+  
+  <!-- Digital elements -->
+  <g opacity="0.15">
+    <text x="1200" y="300" font-family="monospace" font-size="24" fill="#00ff88">BTC/USD</text>
+    <text x="1200" y="330" font-family="monospace" font-size="18" fill="#ffffff">$45,234.67</text>
+    <text x="1200" y="360" font-family="monospace" font-size="16" fill="#00ff88">+2.34%</text>
+    
+    <text x="1200" y="420" font-family="monospace" font-size="24" fill="#ff4757">ETH/USD</text>
+    <text x="1200" y="450" font-family="monospace" font-size="18" fill="#ffffff">$3,156.89</text>
+    <text x="1200" y="480" font-family="monospace" font-size="16" fill="#ff4757">-1.23%</text>
+  </g>
+</svg>
