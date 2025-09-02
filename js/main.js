@@ -290,70 +290,212 @@ if (typeof module !== 'undefined' && module.exports) {
 }
 
 
-// Real-time price updates (demo data - replace with actual API)
+// Enhanced real-time trading data with portfolio tracking
 function updatePrices() {
-    console.log('Updating prices...'); // Debug log
+    console.log('Updating enhanced trading data...');
     const pairs = [
-        { id: 'eurusd', base: 1.08213, symbol: 'EUR/USD' },
-        { id: 'gbpusd', base: 1.26701, symbol: 'GBP/USD' },
-        { id: 'usdchf', base: 0.88138, symbol: 'USD/CHF' },
-        { id: 'btcusd', base: 43250, symbol: 'BTC/USD' }
+        { id: 'eurusd', base: 1.08213, symbol: 'EUR/USD', volume: '2.1B' },
+        { id: 'gbpusd', base: 1.26701, symbol: 'GBP/USD', volume: '1.8B' },
+        { id: 'usdchf', base: 0.88138, symbol: 'USD/CHF', volume: '890M' },
+        { id: 'btcusd', base: 43250, symbol: 'BTC/USD', volume: '15.2B' },
+        { id: 'ethusd', base: 2650, symbol: 'ETH/USD', volume: '8.7B' },
+        { id: 'xauusd', base: 2018.50, symbol: 'XAU/USD', volume: '4.2B' }
     ];
     
     pairs.forEach(pair => {
-        const variation = (Math.random() - 0.5) * 0.01;
-        const newPrice = pair.id === 'btcusd' ? 
+        const variation = (Math.random() - 0.5) * 0.02; // Increased volatility
+        const newPrice = pair.id.includes('usd') && (pair.id === 'btcusd' || pair.id === 'ethusd') ? 
             Math.round(pair.base + (variation * pair.base)) : 
-            (pair.base + variation).toFixed(5);
+            (pair.base + variation).toFixed(pair.id === 'xauusd' ? 2 : 5);
         const changePercent = (variation / pair.base * 100).toFixed(2);
         
-        // Update main dashboard
-        const priceElement = document.getElementById(`${pair.id}-price`);
-        const changeElement = document.getElementById(`${pair.id}-change`);
-        const cardElement = document.getElementById(`${pair.id}-card`);
+        // Update main dashboard with enhanced data
+        updatePriceElements(pair.id, newPrice, changePercent, pair.volume);
         
-        console.log(`Updating ${pair.id}:`, { priceElement, changeElement, cardElement }); // Debug log
+        // Update portfolio tracking
+        updatePortfolioData(pair.id, newPrice, changePercent);
+    });
+    
+    // Update market sentiment
+    updateMarketSentiment();
+    
+    // Update trading statistics
+    updateTradingStats();
+}
+
+// Enhanced price element updates with volume data
+function updatePriceElements(pairId, price, changePercent, volume) {
+    const priceElement = document.getElementById(`${pairId}-price`);
+    const changeElement = document.getElementById(`${pairId}-change`);
+    const cardElement = document.getElementById(`${pairId}-card`);
+    const volumeElement = document.getElementById(`${pairId}-volume`);
+    
+    if (priceElement && changeElement && cardElement) {
+        priceElement.textContent = price;
+        changeElement.textContent = `${changePercent > 0 ? '+' : ''}${changePercent}%`;
         
-        if (priceElement && changeElement && cardElement) {
-            priceElement.textContent = newPrice;
-            changeElement.textContent = `${changePercent > 0 ? '+' : ''}${changePercent}%`;
-            
-            // Update card styling based on change
-            cardElement.className = `price-card ${changePercent > 0 ? 'positive' : 'negative'}`;
-            changeElement.className = `change ${changePercent > 0 ? 'positive' : 'negative'}`;
+        // Enhanced styling with animation
+        cardElement.className = `price-card ${changePercent > 0 ? 'positive' : 'negative'}`;
+        changeElement.className = `change ${changePercent > 0 ? 'positive' : 'negative'}`;
+        
+        // Add flash effect for price changes
+        cardElement.style.animation = 'priceFlash 0.5s ease';
+        setTimeout(() => {
+            cardElement.style.animation = '';
+        }, 500);
+        
+        // Update volume if element exists
+        if (volumeElement) {
+            volumeElement.textContent = volume;
+        }
+    }
+}
+
+// Portfolio tracking functionality
+function updatePortfolioData(pairId, price, changePercent) {
+    const portfolioElement = document.getElementById('portfolio-value');
+    const portfolioPnlElement = document.getElementById('portfolio-pnl');
+    
+    if (portfolioElement && portfolioPnlElement) {
+        // Simulate portfolio calculations
+        const baseValue = 125000;
+        const portfolioChange = (Math.random() - 0.4) * 0.05; // Slight positive bias
+        const newValue = baseValue + (portfolioChange * baseValue);
+        const pnl = newValue - baseValue;
+        
+        portfolioElement.textContent = `$${newValue.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+        portfolioPnlElement.textContent = `${pnl > 0 ? '+' : ''}$${Math.abs(pnl).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+        portfolioPnlElement.className = `portfolio-pnl ${pnl > 0 ? 'positive' : 'negative'}`;
+    }
+}
+
+// Market sentiment indicator
+function updateMarketSentiment() {
+    const sentimentElement = document.getElementById('market-sentiment');
+    const sentimentValueElement = document.getElementById('sentiment-value');
+    
+    if (sentimentElement && sentimentValueElement) {
+        const sentiment = Math.random();
+        let sentimentText, sentimentClass;
+        
+        if (sentiment > 0.6) {
+            sentimentText = 'Bullish';
+            sentimentClass = 'bullish';
+        } else if (sentiment < 0.4) {
+            sentimentText = 'Bearish';
+            sentimentClass = 'bearish';
         } else {
-            console.log(`Elements not found for ${pair.id}`);
+            sentimentText = 'Neutral';
+            sentimentClass = 'neutral';
         }
         
-        // Update mini dashboard (signin page)
-        const miniPriceElement = document.getElementById(`mini-${pair.id}-price`);
-        const miniChangeElement = document.getElementById(`mini-${pair.id}-change`);
-        const miniCardElement = document.getElementById(`mini-${pair.id}-card`);
-        
-        if (miniPriceElement && miniChangeElement && miniCardElement) {
-            miniPriceElement.textContent = newPrice;
-            miniChangeElement.textContent = `${changePercent > 0 ? '+' : ''}${changePercent}%`;
-            miniChangeElement.className = `mini-change ${changePercent > 0 ? 'positive' : 'negative'}`;
-        }
-        
-        // Update register page mini dashboard
-        const regMiniPriceElement = document.getElementById(`reg-mini-${pair.id}-price`);
-        const regMiniChangeElement = document.getElementById(`reg-mini-${pair.id}-change`);
-        const regMiniCardElement = document.getElementById(`reg-mini-${pair.id}-card`);
-        
-        if (regMiniPriceElement && regMiniChangeElement && regMiniCardElement) {
-            regMiniPriceElement.textContent = newPrice;
-            regMiniChangeElement.textContent = `${changePercent > 0 ? '+' : ''}${changePercent}%`;
-            regMiniChangeElement.className = `mini-change ${changePercent > 0 ? 'positive' : 'negative'}`;
+        sentimentValueElement.textContent = sentimentText;
+        sentimentElement.className = `sentiment-indicator ${sentimentClass}`;
+    }
+}
+
+// Trading statistics updates
+function updateTradingStats() {
+    const statsElements = {
+        'active-trades': Math.floor(Math.random() * 50) + 150,
+        'daily-volume': `$${(Math.random() * 50 + 200).toFixed(1)}M`,
+        'success-rate': `${(Math.random() * 20 + 65).toFixed(1)}%`,
+        'avg-spread': `${(Math.random() * 0.5 + 0.8).toFixed(1)} pips`
+    };
+    
+    Object.entries(statsElements).forEach(([id, value]) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.textContent = value;
         }
     });
 }
 
-// Initialize real-time updates
+// Initialize enhanced trading data
 function initializeTradingData() {
-    console.log('Initializing trading data...'); // Debug log
-    // Call updatePrices immediately
-    setTimeout(updatePrices, 100); // Small delay to ensure DOM is ready
-    // Then set interval for regular updates
-    setInterval(updatePrices, 5000); // Update every 5 seconds
+    console.log('Initializing enhanced trading dashboard...');
+    
+    // Initialize portfolio tracking
+    initializePortfolioTracking();
+    
+    // Initialize market alerts
+    initializeMarketAlerts();
+    
+    // Start real-time updates
+    setTimeout(updatePrices, 100);
+    setInterval(updatePrices, 3000); // Update every 3 seconds for more dynamic feel
+    
+    // Initialize trading notifications
+    setTimeout(() => {
+        showTradingNotification('Market data connected successfully', 'success');
+    }, 1000);
+}
+
+// Portfolio tracking initialization
+function initializePortfolioTracking() {
+    const portfolioData = {
+        totalValue: 125000,
+        dayChange: 2.45,
+        positions: [
+            { symbol: 'EUR/USD', size: 50000, pnl: 245.50 },
+            { symbol: 'GBP/USD', size: 30000, pnl: -123.25 },
+            { symbol: 'BTC/USD', size: 0.5, pnl: 1250.00 }
+        ]
+    };
+    
+    // Store portfolio data globally for updates
+    window.portfolioData = portfolioData;
+}
+
+// Market alerts system
+function initializeMarketAlerts() {
+    const alerts = [
+        { pair: 'EUR/USD', type: 'resistance', level: 1.0850 },
+        { pair: 'BTC/USD', type: 'support', level: 42000 },
+        { pair: 'XAU/USD', type: 'breakout', level: 2020 }
+    ];
+    
+    // Check alerts periodically
+    setInterval(() => {
+        checkMarketAlerts(alerts);
+    }, 10000);
+}
+
+// Check and trigger market alerts
+function checkMarketAlerts(alerts) {
+    alerts.forEach(alert => {
+        if (Math.random() > 0.95) { // 5% chance to trigger alert
+            showTradingNotification(
+                `${alert.pair} ${alert.type} at ${alert.level}`,
+                'warning'
+            );
+        }
+    });
+}
+
+// Enhanced trading notifications
+function showTradingNotification(message, type = 'info') {
+    const notification = document.createElement('div');
+    notification.className = `trading-notification ${type}`;
+    notification.innerHTML = `
+        <div class="notification-content">
+            <i class="fas ${type === 'success' ? 'fa-check-circle' : type === 'warning' ? 'fa-exclamation-triangle' : 'fa-info-circle'}"></i>
+            <span>${message}</span>
+            <button class="notification-close">&times;</button>
+        </div>
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // Auto remove after 5 seconds
+    setTimeout(() => {
+        if (notification.parentNode) {
+            notification.remove();
+        }
+    }, 5000);
+    
+    // Close button functionality
+    notification.querySelector('.notification-close').addEventListener('click', () => {
+        notification.remove();
+    });
 }

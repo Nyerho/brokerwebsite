@@ -97,22 +97,70 @@
                             </script>
                         </div>
                         
-                        <!-- Live Price Cards with Real Data -->
+                        <!-- Enhanced Live Price Cards with Volume -->
                         <div class="price-cards">
                             <div class="price-card positive" id="eurusd-card">
                                 <div class="currency-pair">EUR/USD</div>
                                 <div class="price" id="eurusd-price">Loading...</div>
                                 <div class="change" id="eurusd-change">--</div>
+                                <div class="volume" id="eurusd-volume">--</div>
                             </div>
                             <div class="price-card negative" id="gbpusd-card">
                                 <div class="currency-pair">GBP/USD</div>
                                 <div class="price" id="gbpusd-price">Loading...</div>
                                 <div class="change" id="gbpusd-change">--</div>
+                                <div class="volume" id="gbpusd-volume">--</div>
                             </div>
                             <div class="price-card positive" id="usdchf-card">
                                 <div class="currency-pair">USD/CHF</div>
                                 <div class="price" id="usdchf-price">Loading...</div>
                                 <div class="change" id="usdchf-change">--</div>
+                                <div class="volume" id="usdchf-volume">--</div>
+                            </div>
+                            <div class="price-card crypto" id="btcusd-card">
+                                <div class="currency-pair">BTC/USD</div>
+                                <div class="price" id="btcusd-price">Loading...</div>
+                                <div class="change" id="btcusd-change">--</div>
+                                <div class="volume" id="btcusd-volume">--</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Portfolio Tracking Widget -->
+                        <div class="portfolio-widget">
+                            <div class="portfolio-header">
+                                <h4>Portfolio Overview</h4>
+                                <div class="portfolio-controls">
+                                    <button class="portfolio-btn active">Today</button>
+                                    <button class="portfolio-btn">Week</button>
+                                    <button class="portfolio-btn">Month</button>
+                                </div>
+                            </div>
+                            <div class="portfolio-stats">
+                                <div class="portfolio-stat">
+                                    <span class="stat-label">Total Value</span>
+                                    <span class="stat-value" id="portfolio-value">$125,000.00</span>
+                                </div>
+                                <div class="portfolio-stat">
+                                    <span class="stat-label">P&L</span>
+                                    <span class="stat-value portfolio-pnl positive" id="portfolio-pnl">+$2,450.00</span>
+                                </div>
+                                <div class="portfolio-stat">
+                                    <span class="stat-label">Success Rate</span>
+                                    <span class="stat-value" id="success-rate">68.4%</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Market Sentiment Indicator -->
+                        <div class="market-sentiment-widget">
+                            <div class="sentiment-header">
+                                <h4>Market Sentiment</h4>
+                                <div class="sentiment-indicator bullish" id="market-sentiment">
+                                    <span id="sentiment-value">Bullish</span>
+                                    <div class="sentiment-meter">
+                                        <div class="sentiment-fill"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

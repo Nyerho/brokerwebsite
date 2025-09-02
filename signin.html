@@ -7,7 +7,15 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+        import { getAuth } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
+        window.firebaseConfig = {
+            // Your Firebase config will go here
+        };
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -37,7 +45,7 @@
                     <p>Sign in to your CentralTradehub account</p>
                 </div>
 
-                <!-- Email/Password Sign In Only -->
+                <!-- Email/Password Sign In -->
                 <form class="auth-form" id="signinForm">
                     <div class="form-group">
                         <label for="email">Email Address</label>
@@ -62,7 +70,7 @@
                             <span class="checkmark"></span>
                             Remember me
                         </label>
-                        <a href="#" class="forgot-password">Forgot Password?</a>
+                        <a href="#" class="forgot-password" id="forgotPasswordLink">Forgot Password?</a>
                     </div>
 
                     <button type="submit" class="auth-btn primary" id="signinBtn">
@@ -72,6 +80,17 @@
                         </span>
                     </button>
                 </form>
+
+                <!-- Google Sign In Button -->
+                <div class="social-auth">
+                    <div class="divider">
+                        <span>or</span>
+                    </div>
+                    <button type="button" class="auth-btn google" id="googleSignInBtn">
+                        <i class="fab fa-google"></i>
+                        <span>Continue with Google</span>
+                    </button>
+                </div>
 
                 <div class="auth-footer">
                     <p>Don't have an account? <a href="register.html">Create one here</a></p>
@@ -149,7 +168,7 @@
         </div>
     </section>
 
-    <script src="js/auth.js"></script>
+    <script type="module" src="js/firebase-auth.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
