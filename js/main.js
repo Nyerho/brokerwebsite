@@ -288,3 +288,72 @@ window.BrokerProUtils = {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = window.BrokerProUtils;
 }
+
+
+// Real-time price updates (demo data - replace with actual API)
+function updatePrices() {
+    console.log('Updating prices...'); // Debug log
+    const pairs = [
+        { id: 'eurusd', base: 1.08213, symbol: 'EUR/USD' },
+        { id: 'gbpusd', base: 1.26701, symbol: 'GBP/USD' },
+        { id: 'usdchf', base: 0.88138, symbol: 'USD/CHF' },
+        { id: 'btcusd', base: 43250, symbol: 'BTC/USD' }
+    ];
+    
+    pairs.forEach(pair => {
+        const variation = (Math.random() - 0.5) * 0.01;
+        const newPrice = pair.id === 'btcusd' ? 
+            Math.round(pair.base + (variation * pair.base)) : 
+            (pair.base + variation).toFixed(5);
+        const changePercent = (variation / pair.base * 100).toFixed(2);
+        
+        // Update main dashboard
+        const priceElement = document.getElementById(`${pair.id}-price`);
+        const changeElement = document.getElementById(`${pair.id}-change`);
+        const cardElement = document.getElementById(`${pair.id}-card`);
+        
+        console.log(`Updating ${pair.id}:`, { priceElement, changeElement, cardElement }); // Debug log
+        
+        if (priceElement && changeElement && cardElement) {
+            priceElement.textContent = newPrice;
+            changeElement.textContent = `${changePercent > 0 ? '+' : ''}${changePercent}%`;
+            
+            // Update card styling based on change
+            cardElement.className = `price-card ${changePercent > 0 ? 'positive' : 'negative'}`;
+            changeElement.className = `change ${changePercent > 0 ? 'positive' : 'negative'}`;
+        } else {
+            console.log(`Elements not found for ${pair.id}`);
+        }
+        
+        // Update mini dashboard (signin page)
+        const miniPriceElement = document.getElementById(`mini-${pair.id}-price`);
+        const miniChangeElement = document.getElementById(`mini-${pair.id}-change`);
+        const miniCardElement = document.getElementById(`mini-${pair.id}-card`);
+        
+        if (miniPriceElement && miniChangeElement && miniCardElement) {
+            miniPriceElement.textContent = newPrice;
+            miniChangeElement.textContent = `${changePercent > 0 ? '+' : ''}${changePercent}%`;
+            miniChangeElement.className = `mini-change ${changePercent > 0 ? 'positive' : 'negative'}`;
+        }
+        
+        // Update register page mini dashboard
+        const regMiniPriceElement = document.getElementById(`reg-mini-${pair.id}-price`);
+        const regMiniChangeElement = document.getElementById(`reg-mini-${pair.id}-change`);
+        const regMiniCardElement = document.getElementById(`reg-mini-${pair.id}-card`);
+        
+        if (regMiniPriceElement && regMiniChangeElement && regMiniCardElement) {
+            regMiniPriceElement.textContent = newPrice;
+            regMiniChangeElement.textContent = `${changePercent > 0 ? '+' : ''}${changePercent}%`;
+            regMiniChangeElement.className = `mini-change ${changePercent > 0 ? 'positive' : 'negative'}`;
+        }
+    });
+}
+
+// Initialize real-time updates
+function initializeTradingData() {
+    console.log('Initializing trading data...'); // Debug log
+    // Call updatePrices immediately
+    setTimeout(updatePrices, 100); // Small delay to ensure DOM is ready
+    // Then set interval for regular updates
+    setInterval(updatePrices, 5000); // Update every 5 seconds
+}
