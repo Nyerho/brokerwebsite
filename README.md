@@ -1,4 +1,4 @@
-# BrokerPro - Professional Trading Platform
+# CentralTradehub - Professional Trading Platform
 
 A modern, responsive broker website built with HTML, CSS, and JavaScript featuring a comprehensive admin dashboard, live trading widgets, and real-time chat support.
 

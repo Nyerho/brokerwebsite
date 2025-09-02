@@ -8,10 +8,8 @@
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
-    color: #e2e8f0;
-    background: linear-gradient(135deg, rgba(15,15,35,0.9) 0%, rgba(26,26,46,0.9) 50%, rgba(22,33,62,0.9) 100%), url('../images/trading-bg.svg');
-    background-size: cover;
-    background-position: center;
+    color: #f8fafc;
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #2d2d2d 100%);
     background-attachment: fixed;
     min-height: 100vh;
     overflow-x: hidden;
@@ -24,9 +22,9 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.1) 0%, transparent 50%);
+    background: radial-gradient(circle at 20% 80%, rgba(64, 64, 64, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(128, 128, 128, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(96, 96, 96, 0.08) 0%, transparent 50%);
     pointer-events: none;
     z-index: -1;
 }
@@ -48,10 +46,10 @@ ul {
 
 /* Navigation */
 .navbar {
-    background: rgba(15, 15, 35, 0.8);
+    background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
     position: fixed;
     top: 0;
     width: 100%;
@@ -70,19 +68,19 @@ ul {
 }
 
 .nav-logo h2 {
-    background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     font-weight: 700;
     font-size: 1.5rem;
-    text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
 }
 
 .nav-logo i {
     margin-right: 8px;
-    color: #00d4ff;
-    filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.7));
+    color: #ffffff;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
 }
 
 .nav-menu {
@@ -101,16 +99,15 @@ ul {
 }
 
 .nav-link:hover {
-    color: #00d4ff;
-    background: rgba(0, 212, 255, 0.1);
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+    color: #ffffff;
+    background: rgba(128, 128, 128, 0.1);
+    transform: translateY(-2px);
 }
 
 .btn-signin {
-    color: #00d4ff !important;
-    border: 1px solid rgba(0, 212, 255, 0.5);
-    background: rgba(0, 212, 255, 0.1);
-    backdrop-filter: blur(10px);
+    background: rgba(128, 128, 128, 0.2);
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    color: #ffffff !important;
 }
 
 .btn-signin:hover {
@@ -121,10 +118,9 @@ ul {
 }
 
 .btn-register {
-    background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%);
-    color: #fff !important;
-    border: none;
-    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+    background: linear-gradient(135deg, #404040 0%, #606060 100%);
+    color: #ffffff !important;
+    border: 1px solid rgba(128, 128, 128, 0.3);
 }
 
 .btn-register:hover {
@@ -148,14 +144,11 @@ ul {
 
 /* Hero Section */
 .hero {
-    background: transparent;
-    color: #fff;
-    padding: 120px 0 80px;
     min-height: 100vh;
     display: flex;
     align-items: center;
-    position: relative;
-    overflow: hidden;
+    padding: 100px 0 50px;
+    background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(26,26,26,0.8) 50%, rgba(45,45,45,0.8) 100%);
 }
 
 .hero::before {
@@ -262,15 +255,14 @@ ul {
 }
 
 .trading-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(20px);
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(128, 128, 128, 0.2);
     border-radius: 20px;
     padding: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    position: relative;
-    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+    width: 100%;
+    max-width: 500px;
 }
 
 .trading-card::before {
