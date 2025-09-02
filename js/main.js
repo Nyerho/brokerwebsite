@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeSmoothScrolling();
     initializeAnimations();
     initializeContactForm();
+    initializeTradingData(); // Add trading data initialization here
 });
 
 // Navigation functionality
