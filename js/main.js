@@ -35,11 +35,11 @@ function initializeNavigation() {
         const navbar = document.querySelector('.navbar');
         if (navbar) {
             if (window.scrollY > 50) {
-                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-                navbar.style.backdropFilter = 'blur(10px)';
+                navbar.style.background = 'rgba(0, 0, 0, 0.98)';
+                navbar.style.backdropFilter = 'blur(20px)';
             } else {
-                navbar.style.background = '#fff';
-                navbar.style.backdropFilter = 'none';
+                navbar.style.background = 'rgba(0, 0, 0, 0.95)';
+                navbar.style.backdropFilter = 'blur(20px)';
             }
         }
     });
