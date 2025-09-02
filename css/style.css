@@ -1869,7 +1869,8 @@ ul {
 /* Products Section */
 .products-section {
     padding: 80px 0;
-    background: transparent;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), 
+                url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&h=1080&fit=crop&crop=center') center/cover no-repeat;
     position: relative;
 }
 
@@ -1880,9 +1881,14 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.1) 0%, transparent 50%);
-    z-index: -1;
+    background: radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.15) 0%, transparent 50%);
+    z-index: 1;
+}
+
+.products-section .container {
+    position: relative;
+    z-index: 2;
 }
 
 .section-header {
