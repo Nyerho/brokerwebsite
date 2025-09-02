@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CentralTradehub - Professional Trading Platform</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -20,7 +20,7 @@
                     <a href="#home" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#products" class="nav-link">Products</a>
                 </li>
                 <li class="nav-item">
                     <a href="#about" class="nav-link">About</a>
@@ -43,369 +43,185 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section - Inspired by tradetrendpro.com -->
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
+                <div class="hero-badge">
+                    <span>🚀 Existence is Enhanced with Wealth</span>
+                </div>
                 <h1 class="hero-title">Professional Trading Made Simple</h1>
-                <p class="hero-subtitle">Experience next-generation trading with CentralTradehub's advanced tools and real-time market data</p>
+                <p class="hero-subtitle">Become part of the multitude of investors and elevate your portfolio to unparalleled heights with CentralTradehub's advanced trading platforms.</p>
                 <div class="hero-buttons">
-                    <a href="register.html" class="btn btn-primary">Get Started</a>
-                    <a href="#services" class="btn btn-secondary">Learn More</a>
+                    <a href="register.html" class="btn btn-primary">
+                        <span>Start Trading</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-number">50K+</span>
+                                <span class="stat-label">Active Traders</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="trading-card">
-                    <div class="card-header">
-                        <h3>Live Trading</h3>
+            <div class="hero-visual">
+                <div class="trading-dashboard">
+                    <div class="dashboard-header">
+                        <h3>Live Trading Dashboard</h3>
                         <span class="status-indicator"></span>
                     </div>
-                    <div class="live-chart">
-                        <!-- TradingView Widget BEGIN -->
-                        <div class="tradingview-widget-container">
-                            <div class="tradingview-widget-container__widget"></div>
-                            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-                            {
-                                "autosize": true,
-                                "symbol": "NASDAQ:AAPL",
-                                "interval": "D",
-                                "timezone": "Etc/UTC",
-                                "theme": "dark",
-                                "style": "1",
-                                "locale": "en",
-                                "enable_publishing": false,
-                                "backgroundColor": "rgba(15, 15, 35, 0.8)",
-                                "gridColor": "rgba(255, 255, 255, 0.1)",
-                                "hide_top_toolbar": true,
-                                "hide_legend": true,
-                                "save_image": false,
-                                "calendar": false,
-                                "hide_volume": true,
-                                "support_host": "https://www.tradingview.com"
-                            }
-                            </script>
+                    <div class="dashboard-content">
+                        <div class="price-cards">
+                            <div class="price-card positive">
+                                <div class="currency-pair">EUR/USD</div>
+                                <div class="price">1.08213</div>
+                                <div class="change">+0.45%</div>
+                            </div>
+                            <div class="price-card negative">
+                                <div class="currency-pair">GBP/USD</div>
+                                <div class="price">1.26701</div>
+                                <div class="change">-0.46%</div>
+                            </div>
+                            <div class="price-card positive">
+                                <div class="currency-pair">USD/CHF</div>
+                                <div class="price">0.88138</div>
+                                <div class="change">+2.96%</div>
+                            </div>
                         </div>
-                        <!-- TradingView Widget END -->
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Market Ticker Section -->
-    <section class="market-ticker">
+    <!-- Products Section - Inspired by tradetrendpro.com -->
+    <section id="products" class="products-section">
         <div class="container">
-            <div class="ticker-header">
+            <div class="section-header">
+                <h2>OUR PRODUCTS</h2>
+                <p>Engage in transactions with our top performing offerings</p>
+                <p class="section-description">Confidently conduct trades with CentralTradehub's cutting-edge trading platforms providing innovative levels of stability and dependability. Subscribe and execute transactions with the most competitive pricing and liquidity from top-tier Banks and Prime Brokers.</p>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Cryptocurrency Product -->
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fab fa-bitcoin"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>Cryptocurrency Trading</h3>
+                        <p>Allocate funds to the most popular cryptocurrencies like Bitcoin, Ethereum, Ripple, etc. with CentralTradehub and capitalize on this dynamic market with significant pricing shifts, suitable for experienced traders who have an assertive trading approach.</p>
+                        <div class="crypto-prices">
+                            <div class="crypto-item">
+                                <span class="crypto-name">BTC/USD</span>
+                                <span class="crypto-price">$45,230</span>
+                                <span class="crypto-change positive">+2.45%</span>
+                            </div>
+                            <div class="crypto-item">
+                                <span class="crypto-name">ETH/USD</span>
+                                <span class="crypto-price">$3,120</span>
+                                <span class="crypto-change negative">-1.23%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Forex Product -->
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>Forex Trading</h3>
+                        <p>Access over 55 major, cross, and exotic Forex pairs with narrow spreads.</p>
+                        <div class="forex-ticker">
+                            <div class="ticker-item">
+                                <div class="currency-info">
+                                    <span class="currency-pair">EUR/USD</span>
+                                    <span class="currency-name">Euro vs US Dollar</span>
+                                </div>
+                                <div class="price-info">
+                                    <span class="price">$1.08213</span>
+                                    <span class="change negative">-1.19%</span>
+                                </div>
+                            </div>
+                            <div class="ticker-item">
+                                <div class="currency-info">
+                                    <span class="currency-pair">GBP/USD</span>
+                                    <span class="currency-name">Great Britain Pound</span>
+                                </div>
+                                <div class="price-info">
+                                    <span class="price">$1.26701</span>
+                                    <span class="change negative">-0.46%</span>
+                                </div>
+                            </div>
+                            <div class="ticker-item">
+                                <div class="currency-info">
+                                    <span class="currency-pair">USD/CHF</span>
+                                    <span class="currency-name">US Dollar vs Swiss</span>
+                                </div>
+                                <div class="price-info">
+                                    <span class="price">$0.88138</span>
+                                    <span class="change positive">+2.96%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Market Data Section -->
+    <section class="market-data-section">
+        <div class="container">
+            <div class="market-header">
                 <h3><i class="fas fa-chart-line"></i> Live Market Data</h3>
             </div>
-            <div class="ticker-container">
-                <!-- TradingView Ticker Widget BEGIN -->
-                <div class="tradingview-widget-container">
-                    <div class="tradingview-widget-container__widget"></div>
-                    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-                    {
-                        "symbols": [
-                            {
-                                "proName": "FOREXCOM:SPXUSD",
-                                "title": "S&P 500"
-                            },
-                            {
-                                "proName": "FOREXCOM:NSXUSD",
-                                "title": "US 100"
-                            },
-                            {
-                                "proName": "FX_IDC:EURUSD",
-                                "title": "EUR/USD"
-                            },
-                            {
-                                "proName": "BITSTAMP:BTCUSD",
-                                "title": "Bitcoin"
-                            },
-                            {
-                                "proName": "BITSTAMP:ETHUSD",
-                                "title": "Ethereum"
-                            },
-                            {
-                                "description": "Apple",
-                                "proName": "NASDAQ:AAPL"
-                            },
-                            {
-                                "description": "Tesla",
-                                "proName": "NASDAQ:TSLA"
-                            },
-                            {
-                                "description": "Microsoft",
-                                "proName": "NASDAQ:MSFT"
-                            },
-                            {
-                                "description": "Google",
-                                "proName": "NASDAQ:GOOGL"
-                            },
-                            {
-                                "description": "Amazon",
-                                "proName": "NASDAQ:AMZN"
-                            }
-                        ],
-                        "showSymbolLogo": true,
-                        "colorTheme": "dark",
-                        "isTransparent": true,
-                        "displayMode": "adaptive",
-                        "locale": "en"
-                    }
-                    </script>
-                </div>
-                <!-- TradingView Ticker Widget END -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Services</h2>
-                <p>Comprehensive trading solutions for every investor</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Stock Trading</h3>
-                    <p>Trade US and international stocks with commission-free trades, real-time Level II data, and advanced order types including limit, stop-loss, and bracket orders.</p>
-                    <div class="service-features">
-                        <ul>
-                            <li><i class="fas fa-check"></i> $0 commission on stock trades</li>
-                            <li><i class="fas fa-check"></i> Real-time market data</li>
-                            <li><i class="fas fa-check"></i> Pre/after-market trading</li>
-                            <li><i class="fas fa-check"></i> Advanced charting tools</li>
-                        </ul>
-                    </div>
-                    <div class="service-widget">
-                        <!-- TradingView Mini Chart Widget -->
-                        <div class="tradingview-widget-container">
-                            <div class="tradingview-widget-container__widget"></div>
-                            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-                            {
-                                "symbol": "NASDAQ:AAPL",
-                                "width": "100%",
-                                "height": "220",
-                                "locale": "en",
-                                "dateRange": "12M",
-                                "colorTheme": "dark",
-                                "isTransparent": true,
-                                "autosize": false,
-                                "largeChartUrl": ""
-                            }
-                            </script>
-                        </div>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-coins"></i>
-                    </div>
-                    <h3>Cryptocurrency</h3>
-                    <p>Trade Bitcoin, Ethereum, and 50+ cryptocurrencies with institutional-grade security, cold storage, and 24/7 trading availability.</p>
-                    <div class="service-features">
-                        <ul>
-                            <li><i class="fas fa-check"></i> 50+ cryptocurrencies</li>
-                            <li><i class="fas fa-check"></i> Cold storage security</li>
-                            <li><i class="fas fa-check"></i> 24/7 trading</li>
-                            <li><i class="fas fa-check"></i> DeFi staking rewards</li>
-                        </ul>
-                    </div>
-                    <div class="service-widget">
-                        <!-- TradingView Crypto Widget -->
-                        <div class="tradingview-widget-container">
-                            <div class="tradingview-widget-container__widget"></div>
-                            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-                            {
-                                "symbol": "BITSTAMP:BTCUSD",
-                                "width": "100%",
-                                "height": "220",
-                                "locale": "en",
-                                "dateRange": "12M",
-                                "colorTheme": "dark",
-                                "isTransparent": true,
-                                "autosize": false,
-                                "largeChartUrl": ""
-                            }
-                            </script>
-                        </div>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <h3>Forex Trading</h3>
-                    <p>Access 40+ currency pairs with spreads as low as 0.1 pips, 500:1 leverage, and lightning-fast execution speeds under 10ms average.</p>
-                    <div class="service-features">
-                        <ul>
-                            <li><i class="fas fa-check"></i> 40+ currency pairs</li>
-                            <li><i class="fas fa-check"></i> 0.1 pip spreads</li>
-                            <li><i class="fas fa-check"></i> Up to 500:1 leverage</li>
-                            <li><i class="fas fa-check"></i> <10ms execution</li>
-                        </ul>
-                    </div>
-                    <div class="service-widget">
-                        <!-- TradingView Forex Widget -->
-                        <div class="tradingview-widget-container">
-                            <div class="tradingview-widget-container__widget"></div>
-                            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-                            {
-                                "symbol": "FX:EURUSD",
-                                "width": "100%",
-                                "height": "220",
-                                "locale": "en",
-                                "dateRange": "12M",
-                                "colorTheme": "dark",
-                                "isTransparent": true,
-                                "autosize": false,
-                                "largeChartUrl": ""
-                            }
-                            </script>
-                        </div>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-pie"></i>
-                    </div>
-                    <h3>Portfolio Management</h3>
-                    <p>AI-powered portfolio optimization, automated rebalancing, tax-loss harvesting, and comprehensive performance analytics with risk assessment.</p>
-                    <div class="service-features">
-                        <ul>
-                            <li><i class="fas fa-check"></i> AI portfolio optimization</li>
-                            <li><i class="fas fa-check"></i> Auto rebalancing</li>
-                            <li><i class="fas fa-check"></i> Tax-loss harvesting</li>
-                            <li><i class="fas fa-check"></i> Risk analytics</li>
-                        </ul>
-                    </div>
-                    <div class="service-widget">
-                        <!-- TradingView Market Overview Widget -->
-                        <div class="tradingview-widget-container">
-                            <div class="tradingview-widget-container__widget"></div>
-                            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
-                            {
-                                "colorTheme": "dark",
-                                "dateRange": "12M",
-                                "showChart": true,
-                                "locale": "en",
-                                "width": "100%",
-                                "height": "220",
-                                "largeChartUrl": "",
-                                "isTransparent": true,
-                                "showSymbolLogo": true,
-                                "showFloatingTooltip": false,
-                                "plotLineColorGrowing": "rgba(41, 98, 255, 1)",
-                                "plotLineColorFalling": "rgba(41, 98, 255, 1)",
-                                "gridLineColor": "rgba(240, 243, 250, 0)",
-                                "scaleFontColor": "rgba(120, 123, 134, 1)",
-                                "belowLineFillColorGrowing": "rgba(41, 98, 255, 0.12)",
-                                "belowLineFillColorFalling": "rgba(41, 98, 255, 0.12)",
-                                "belowLineFillColorGrowingBottom": "rgba(41, 98, 255, 0)",
-                                "belowLineFillColorFallingBottom": "rgba(41, 98, 255, 0)",
-                                "symbolActiveColor": "rgba(41, 98, 255, 0.12)",
-                                "tabs": [
-                                    {
-                                        "title": "Indices",
-                                        "symbols": [
-                                            {
-                                                "s": "FOREXCOM:SPXUSD",
-                                                "d": "S&P 500"
-                                            },
-                                            {
-                                                "s": "FOREXCOM:NSXUSD",
-                                                "d": "US 100"
-                                            },
-                                            {
-                                                "s": "FOREXCOM:DJI",
-                                                "d": "Dow 30"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                            </script>
-                        </div>
-                    </div>
+            <div class="market-ticker-scroll">
+                <div class="ticker-content">
+                    <div class="ticker-item">EUR/USD <span class="positive">1.08213 (+0.45%)</span></div>
+                    <div class="ticker-item">GBP/USD <span class="negative">1.26701 (-0.46%)</span></div>
+                    <div class="ticker-item">USD/CHF <span class="positive">0.88138 (+2.96%)</span></div>
+                    <div class="ticker-item">AUD/USD <span class="negative">0.65652 (-1.40%)</span></div>
+                    <div class="ticker-item">NZD/USD <span class="positive">0.61982 (+0.06%)</span></div>
+                    <div class="ticker-item">USD/CAD <span class="positive">1.35074 (+0.54%)</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
+    <!-- Features Section -->
+    <section class="features-section">
         <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>Why Choose BrokerPro?</h2>
-                    <p>With over a decade of experience in financial markets, BrokerPro provides cutting-edge technology and personalized service to help you achieve your trading goals.</p>
-                    <ul class="features-list">
-                        <li><i class="fas fa-check"></i> Advanced trading platform</li>
-                        <li><i class="fas fa-check"></i> 24/7 customer support</li>
-                        <li><i class="fas fa-check"></i> Competitive pricing</li>
-                        <li><i class="fas fa-check"></i> Secure transactions</li>
-                    </ul>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure Trading</h3>
+                    <p>Bank-level security with advanced encryption</p>
                 </div>
-                <div class="about-stats">
-                    <div class="stat-item">
-                        <h3>50K+</h3>
-                        <p>Active Traders</p>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
                     </div>
-                    <div class="stat-item">
-                        <h3>$2B+</h3>
-                        <p>Trading Volume</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>99.9%</h3>
-                        <p>Uptime</p>
-                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock customer support</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2>Get In Touch</h2>
-                <p>Ready to start trading? Contact us today</p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>+1 (555) 123-4567</p>
-                        </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-bar"></i>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>support@brokerpro.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Address</h4>
-                            <p>123 Financial District, NY 10004</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form>
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
+                    <h3>Advanced Analytics</h3>
+                    <p>Professional trading tools and insights</p>
                 </div>
             </div>
         </div>
@@ -416,103 +232,32 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3><i class="fas fa-chart-line"></i> BrokerPro</h3>
-                    <p>Your trusted partner in financial trading and investment.</p>
+                    <h3>CentralTradehub</h3>
+                    <p>Professional trading platform for modern investors</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
+                    <h4>Products</h4>
                     <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Forex Trading</a></li>
+                        <li><a href="#">Cryptocurrency</a></li>
+                        <li><a href="#">Commodities</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Account</h4>
+                    <h4>Support</h4>
                     <ul>
-                        <li><a href="signin.html">Sign In</a></li>
-                        <li><a href="register.html">Register</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Live Chat</a></li>
                     </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Follow Us</h4>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 BrokerPro. All rights reserved.</p>
+                <p>&copy; 2024 CentralTradehub. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Live Chat Widget -->
-    <div class="chat-widget" id="chatWidget">
-        <div class="chat-header">
-            <div class="chat-header-info">
-                <div class="agent-avatar">
-                    <i class="fas fa-user-tie"></i>
-                </div>
-                <div class="agent-details">
-                    <h4>Support Agent</h4>
-                    <span class="status online">Online</span>
-                </div>
-            </div>
-            <div class="chat-controls">
-                <button class="minimize-btn" id="minimizeChat">
-                    <i class="fas fa-minus"></i>
-                </button>
-                <button class="close-btn" id="closeChat">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-        </div>
-        <div class="chat-messages" id="chatMessages">
-            <div class="message bot-message">
-                <div class="message-avatar">
-                    <i class="fas fa-robot"></i>
-                </div>
-                <div class="message-content">
-                    <p>Hello! Welcome to BrokerPro. How can I help you today?</p>
-                    <span class="message-time">Just now</span>
-                </div>
-            </div>
-        </div>
-        <div class="typing-indicator" id="typingIndicator" style="display: none;">
-            <div class="typing-dots">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <span class="typing-text">Agent is typing...</span>
-        </div>
-        <div class="chat-input">
-            <div class="input-container">
-                <input type="text" id="chatInput" placeholder="Type your message..." autocomplete="off">
-                <button class="send-btn" id="sendMessage">
-                    <i class="fas fa-paper-plane"></i>
-                </button>
-            </div>
-            <div class="quick-actions">
-                <button class="quick-btn" data-message="I need help with account setup">Account Setup</button>
-                <button class="quick-btn" data-message="How do I start trading?">Start Trading</button>
-                <button class="quick-btn" data-message="What are your fees?">Fees Info</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Chat Toggle Button -->
-    <div class="chat-toggle" id="chatToggle">
-        <i class="fas fa-comments"></i>
-        <span class="notification-badge" id="chatBadge">1</span>
-    </div>
-
     <script src="js/main.js"></script>
-    <script src="js/chat.js"></script>
 </body>
 </html>
